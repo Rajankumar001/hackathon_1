@@ -154,7 +154,13 @@ app.post("/contact",async(req,res)=>{
               return res.status(500).send("Failed to upload image to Cloudinary");
           }
           console.log("Image uploaded to Cloudinary:", result);
-          
+          fs.unlink(imagepath1.tempFilePath, (unlinkErr) => {
+            if (unlinkErr) {
+                console.error("Error deleting temporary file:", unlinkErr);
+            } else {
+                console.log("Temporary file deleted successfully");
+            }
+          })
           // Assuming you get the sport from the request body
           let imagePath;
           switch (Sports) {
