@@ -19,6 +19,7 @@ const venue=require("./src/models/venuelist");
 const connection=require("./src/db/connection");
 const booking=require("./src/models/bookingvenue");
 const fileupload=require("express-fileupload");
+const fs = require('fs');
 const cloudinary=require("cloudinary").v2;
 app.use(fileupload({
   useTempFiles:true
