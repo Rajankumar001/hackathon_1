@@ -9,7 +9,7 @@ const methodoverride=require("method-override");
 app.use(methodoverride("_method"));
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
-const ejs_mate=require("ejs-mate");//for create templating.
+const ejs_mate=require("ejs-mate");
 app.engine("ejs",ejs_mate);
 const bcrypt=require("bcryptjs");
 let port=3000;
